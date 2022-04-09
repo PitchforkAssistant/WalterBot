@@ -1,4 +1,3 @@
-import hikari
 import logging
 import lightbulb
 from lightbulb import checks
@@ -9,9 +8,7 @@ _BOT: lightbulb.BotApp
 _LOGGER = logging.getLogger(__name__)
 
 
-@lightbulb.add_checks(
-    checks.has_role_permissions(
-        hikari.Permissions.ADMINISTRATOR))
+@lightbulb.add_checks(checks.owner_only)
 @lightbulb.option("extension", "One of the bot's unloaded extensions.")
 @lightbulb.command("load", "Loads specified extension.")
 @lightbulb.implements(commands.SlashCommand)
