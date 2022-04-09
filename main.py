@@ -1,3 +1,4 @@
+import hikari
 import lightbulb
 import configparser
 
@@ -6,7 +7,8 @@ def start_bot() -> None:
     config = configparser.ConfigParser()
     config.read("config.ini")
     bot = lightbulb.BotApp(
-        token=config["DEFAULT"]["token"]
+        token=config["DEFAULT"]["token"],
+        intents=hikari.Intents.ALL_GUILDS_PRIVILEGED
     )
     bot.load_extensions_from("./extensions", recursive=True)
     bot.run()
