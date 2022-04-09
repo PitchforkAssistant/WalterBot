@@ -133,3 +133,4 @@ dmypy.json
 
 # Ignore real config
 config.ini
+welcome.ini
