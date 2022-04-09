@@ -5,7 +5,7 @@ import configparser
 
 def start_bot() -> None:
     config = configparser.ConfigParser()
-    config.read("config.ini")
+    config.read("configs/config.ini")
     bot = lightbulb.BotApp(
         token=config["DEFAULT"]["token"],
         intents=hikari.Intents.ALL_GUILDS_PRIVILEGED
